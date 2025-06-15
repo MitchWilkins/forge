@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npx http-server ./src -c-1",
     "watch": "sass --watch ./src/assets/styles/styles.scss ./src/assets/styles/styles.css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "prettier . --write"
   },
   "keywords": [],
   "author": "",
