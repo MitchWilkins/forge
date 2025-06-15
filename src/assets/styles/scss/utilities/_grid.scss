@@ -4,7 +4,7 @@ $-justify-options: (
   center: center,
   between: space-between,
   around: space-around,
-  evenly: space-evenly
+  evenly: space-evenly,
 ) !default;
 
 $-align-options: (
@@ -12,7 +12,7 @@ $-align-options: (
   end: flex-end,
   center: center,
   baseline: baseline,
-  stretch: stretch
+  stretch: stretch,
 ) !default;
 
 @mixin create-grid-config(

@@ -1,21 +1,14 @@
 @function create-control-config() {
-  @return (
-
-  )
+  @return ();
 }
 
 @mixin create-controls() {
   .form {
-
   }
 
   .form__control {
-
   }
 
   .form__control--disabled {
-
   }
-
-  
 }
