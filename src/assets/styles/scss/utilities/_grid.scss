@@ -1,0 +1,44 @@
+$-justify-options: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  between: space-between,
+  around: space-around,
+  evenly: space-evenly
+) !default;
+
+$-align-options: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  baseline: baseline,
+  stretch: stretch
+) !default;
+
+@mixin create-grid-config(
+  $justify-options: $-justify-options,
+  $align-options: $-align-options
+) {
+  $-justify-options: $justify-options !global;
+  $-align-options: $align-options !global;
+}
+
+@mixin create-grid {
+  // Justify-content utility classes
+  @each $key, $value in $-justify-options {
+    .justify-content-#{$key} {
+      justify-content: $value !important;
+    }
+  }
+
+  // Align-items utility classes
+  @each $key, $value in $-align-options {
+    .align-items-#{$key} {
+      align-items: $value !important;
+    }
+  }
+
+  .d-flex {
+    display: flex;
+  }
+}

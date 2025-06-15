@@ -1,0 +1,97 @@
+@function create-card-config(
+  // Card
+  $background: white,
+  $border-width: 1px,
+  $border-style: none,
+  $border-color: grey,
+  $border-radius: 0.25rem,
+  $padding: 0.25em 0,
+  // Header
+  $header-font-weight: 300,
+  $header-font-size: 1.25em,
+  $header-margin-bottom: 1rem
+) {
+  @return (
+    // Card
+    $background,
+    $border-width,
+    $border-style,
+    $border-color,
+    $border-radius,
+    $padding,
+    // Header
+    $header-font-weight,
+    $header-font-size,
+    $header-margin-bottom
+  );
+}
+@mixin create-card(
+  // Card
+  $background,
+  $border-width,
+  $border-style,
+  $border-color,
+  $border-radius,
+  $padding,
+  // Header
+  $header-font-weight,
+  $header-font-size,
+  $header-margin-bottom
+) {
+  $element-padding: 0.5em;
+  .card {
+    border-width: $border-width;
+    border-style: $border-style;
+    border-color: $border-color;
+    border-radius: $border-radius;
+    background: $background;
+    padding: $padding;
+  }
+
+  .card__header {
+    padding: $element-padding;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card__header-image-avatar {
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+
+  .card__header-image-avatar + .card__header-text {
+    margin-bottom: 0.5rem;
+  }
+
+  .card__header-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__title {
+    font-weight: $header-font-weight;
+    font-size: $header-font-size;
+  }
+
+  .card__subtitle {
+    color: #6c757d;
+    font-size: initial;
+    font-weight: 300;
+  }
+
+  .card__content {
+    padding: $element-padding;
+  }
+
+  .card__image {
+    width: 100%;
+  }
+
+  .card__footer {
+    padding: $element-padding;
+  }
+}

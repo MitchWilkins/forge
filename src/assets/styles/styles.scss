@@ -1,0 +1,5 @@
+@use 'scss/main' as forge;
+
+@include forge.core();
+$theme: forge.theme();
+@include forge.components($theme);

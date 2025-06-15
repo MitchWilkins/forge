@@ -1,0 +1,11 @@
+@function is-light($color) {
+  @return (lightness($color) > 50%);
+}
+
+@function text-color-based-on-bg($bg-color, $light-color: #fff, $dark-color: #000) {
+  @if is-light($bg-color) {
+    @return $dark-color;
+  } @else {
+    @return $light-color;
+  }
+}

@@ -1,0 +1,74 @@
+@use 'sass:color';
+@use 'sass:list';
+@use 'sass:map';
+@use 'base' as base;
+@use 'components' as components;
+@use 'utilities' as utilities;
+
+@mixin core(
+  // Base
+  $base: true,
+  $typography: $base,
+  $reset: $base,
+  // Utilities
+  $utilities: true,
+  $color: $utilities,
+  $grid: $utilities,
+  $spacing: $utilities,
+  $text: $utilities
+) {
+  // Base
+  @if $typography {
+    @include base.create-typography();
+  }
+  @if $reset {
+    @include base.create-reset();
+  } @else {
+    @warn "Reset NOT included. This may cause unintended side effects.";
+  }
+
+  // Utilities
+  @if $color {
+    @include utilities.create-color();
+  }
+  @if $grid {
+    @include utilities.create-grid();
+  }
+  @if $spacing {
+    @include utilities.create-spacing();
+  }
+  @if $text {
+    @include utilities.create-text();
+  }
+}
+
+@function theme(
+  $colors: (
+    primary: #f6bd60,
+    secondary: #f7ede2,
+    success: #84a59d,
+    danger: #f28482,
+    warning: #f5cac3
+  ),
+  $button-contrast-colors: ()
+) {
+  @if (list.length($button-contrast-colors) == 0) {
+    @each $color in map.keys($colors) {
+      $button-contrast-colors: map.merge(
+        $button-contrast-colors,
+        (#{$color}: color.adjust(map.get($colors, $color), $lightness: -50%))
+      );
+    }
+  }
+
+  @return (colors: $colors, button-contrast-colors: $button-contrast-colors);
+}
+
+@mixin components(
+  $theme: theme(),
+  $button-config: components.create-button-config(),
+  $card-config: components.create-card-config()
+) {
+  @include components.create-button($theme, $button-config...);
+  @include components.create-card($card-config...);
+}

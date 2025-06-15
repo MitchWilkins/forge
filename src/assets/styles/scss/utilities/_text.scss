@@ -1,0 +1,7 @@
+@mixin create-text {
+  @each $position in (start, left, center, right, end) {
+    .text-#{$position} {
+      text-align: $position !important;
+    }
+  }
+}

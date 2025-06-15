@@ -1,0 +1,68 @@
+@use 'sass:string';
+
+$-spacer: 1rem !default;
+
+$-spacing: (
+  0: 0,
+  1: $-spacer * 0.25,
+  2: $-spacer * 0.5,
+  3: $-spacer,
+  4: $-spacer * 1.5,
+  5: $-spacer * 3
+) !default;
+
+@mixin -create-margins() {
+  @each $size, $length in $-spacing {
+    .m-#{$size} {
+      margin: $length !important;
+    }
+  }
+
+  @each $size, $length in $-spacing {
+    @each $position in (top, right, bottom, left) {
+      .m#{string.slice($position, 1, 1)}-#{$size} {
+        margin-#{$position}: $length !important;
+      }
+    }
+  }
+}
+
+@mixin -create-padding() {
+  @each $size, $length in $-spacing {
+    .p-#{$size} {
+      padding: $length !important;
+    }
+  }
+
+  @each $size, $length in $-spacing {
+    @each $position in (top, right, bottom, left) {
+      .p#{string.slice($position, 1, 1)}-#{$size} {
+        padding-#{$position}: $length !important;
+      }
+    }
+  }
+}
+
+@mixin -create-gaps() {
+  @each $size, $length in $-spacing {
+    .g-#{$size} {
+      gap: $length !important;
+    }
+  }
+
+  @each $size, $length in $-spacing {
+    @each $position in (row, column) {
+      .g#{string.slice($position, 1, 1)}-#{$size} {
+        padding-#{$position}: $length !important;
+      }
+    }
+  }
+}
+
+@mixin create-spacing($spacer: $-spacer, $spacing: $-spacing) {
+  $-spacer: $spacer !global;
+  $-spacing: $spacing !global;
+  @include -create-margins();
+  @include -create-padding();
+  @include -create-gaps();
+}
