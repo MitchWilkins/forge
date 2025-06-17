@@ -1,22 +1,10 @@
 @use 'sass:color';
-@use 'sass:list';
+@use 'sass:map';
 @use '../abstract/mixin' as mixin;
 
-$-colors: (
-  primary: #f6bd60,
-  secondary: #f7ede2,
-  success: #84a59d,
-  danger: #f28482,
-  warning: #f5cac3,
-) !default;
+@mixin create-color($theme) {
+  $colors: map.get($theme, colors);
 
-$-button-contrast-colors: ();
-
-@mixin create-color {
-  @include mixin.create-utility-color-modifier(bg, $-colors);
-  @include mixin.create-utility-color-modifier(text, $-colors, color);
-
-  //  @include mixin.create-color-modifier(btn, $-colors);
-  //  @include mixin.create-color-modifier(btn, $-button-contrast-colors, color);
-  //  @include mixin.create-color-modifier(btn, $-button-contrast-colors, border-color);
+  @include mixin.create-utility-color-modifier(bg, $colors);
+  @include mixin.create-utility-color-modifier(text, $colors, color);
 }

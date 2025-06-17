@@ -1,0 +1,9 @@
+@function create-navbar-config() {
+  
+}
+
+@mixin create-navbar {
+  .navbar {
+    width: 100%;
+  }
+}

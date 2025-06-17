@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use 'sass:map';
 @use '../abstract/mixin' as mixin;
 
@@ -7,9 +8,18 @@
   $border-width: 1px,
   $border-style: none,
   $padding: 0.5em 1.2em,
-  $cursor: pointer
+  $cursor: pointer,
+  $hover-lightness: 10%
 ) {
-  @return ($border-radius, $border-width, $border-style, $padding, $cursor);
+  @return ($border-radius, $border-width, $border-style, $padding, $cursor, $hover-lightness);
+}
+
+@mixin -create-button-hover($colors, $hover-lightness) {
+  @each $name, $color in $colors {
+    .btn--#{$name}:hover {
+      background: color.scale($color, $lightness: $hover-lightness);
+    }
+  }
 }
 
 @mixin create-button(
@@ -18,7 +28,8 @@
   $border-width,
   $border-style,
   $padding,
-  $cursor
+  $cursor,
+  $hover-lightness
 ) {
   $colors: map.get($theme, colors);
   $button-contrast-colors: map.get($theme, button-contrast-colors);
@@ -34,4 +45,6 @@
     padding: $padding;
     cursor: $cursor;
   }
+
+  @include -create-button-hover($colors, $hover-lightness);
 }

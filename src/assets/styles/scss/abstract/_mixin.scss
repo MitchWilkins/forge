@@ -1,7 +1,7 @@
 @mixin create-color-modifier($block-element, $colors, $property: background-color) {
   @each $color, $value in $colors {
     .#{$block-element}--#{$color} {
-      #{$property}: $value !important;
+      #{$property}: $value;
     }
   }
 }
@@ -12,7 +12,7 @@
   $property: background-color
 ) {
   @each $color, $value in $colors {
-    .#{$block-element}--#{$color} {
+    .#{$block-element}-#{$color} {
       #{$property}: $value !important;
     }
   }

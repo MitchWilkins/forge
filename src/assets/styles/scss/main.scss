@@ -12,33 +12,32 @@
   $reset: $base,
   // Utilities
   $utilities: true,
-  $color: $utilities,
   $grid: $utilities,
   $spacing: $utilities,
   $text: $utilities
 ) {
   // Base
   @if $typography {
-    @include base.create-typography();
+    @include base.create-typography;
   }
+
   @if $reset {
-    @include base.create-reset();
+    @include base.create-reset;
   } @else {
     @warn "Reset NOT included. This may cause unintended side effects.";
   }
 
   // Utilities
-  @if $color {
-    @include utilities.create-color();
-  }
   @if $grid {
-    @include utilities.create-grid();
+    @include utilities.create-grid;
   }
+
   @if $spacing {
-    @include utilities.create-spacing();
+    @include utilities.create-spacing;
   }
+
   @if $text {
-    @include utilities.create-text();
+    @include utilities.create-text;
   }
 }
 
@@ -52,7 +51,7 @@
   ),
   $button-contrast-colors: ()
 ) {
-  @if (list.length($button-contrast-colors) == 0) {
+  @if list.length($button-contrast-colors) == 0 {
     @each $color in map.keys($colors) {
       $button-contrast-colors: map.merge(
         $button-contrast-colors,
@@ -65,10 +64,11 @@
 }
 
 @mixin components(
-  $theme: theme(),
+  $theme: theme,
   $button-config: components.create-button-config(),
   $card-config: components.create-card-config()
 ) {
+  @include utilities.create-color($theme);
   @include components.create-button($theme, $button-config...);
   @include components.create-card($card-config...);
 }

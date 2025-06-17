@@ -25,6 +25,7 @@
     $header-margin-bottom
   );
 }
+
 @mixin create-card(
   // Card
   $background,
@@ -39,6 +40,7 @@
   $header-margin-bottom
 ) {
   $element-padding: 0.5em;
+
   .card {
     border-width: $border-width;
     border-style: $border-style;
@@ -63,13 +65,13 @@
     margin-bottom: 0.5rem;
   }
 
-  .card__header-image-avatar + .card__header-text {
-    margin-bottom: 0.5rem;
-  }
-
   .card__header-text {
     display: flex;
     flex-direction: column;
+  }
+
+  .card__header-image-avatar + .card__header-text {
+    margin-bottom: 0.5rem;
   }
 
   .card__title {

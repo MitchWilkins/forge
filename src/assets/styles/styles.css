@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,700;1,14..32,400;1,14..32,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,700;1,14..32,400;1,14..32,700&display=swap");
 body {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -9,7 +9,7 @@ body {
 }
 
 em {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -18,7 +18,7 @@ em {
 }
 
 h1 {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.3;
@@ -36,7 +36,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 1.75rem;
   font-weight: 600;
   line-height: 1.3;
@@ -45,7 +45,7 @@ h3 {
 }
 
 h4 {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.4;
@@ -54,7 +54,7 @@ h4 {
 }
 
 h5 {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.4;
@@ -63,7 +63,7 @@ h5 {
 }
 
 h6 {
-  font-family: 'Inter', 'sans-serif';
+  font-family: "Inter", "sans-serif";
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.5;
@@ -118,46 +118,6 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-}
-
-.bg--primary {
-  background-color: #f6bd60 !important;
-}
-
-.bg--secondary {
-  background-color: #f7ede2 !important;
-}
-
-.bg--success {
-  background-color: #84a59d !important;
-}
-
-.bg--danger {
-  background-color: #f28482 !important;
-}
-
-.bg--warning {
-  background-color: #f5cac3 !important;
-}
-
-.text--primary {
-  color: #f6bd60 !important;
-}
-
-.text--secondary {
-  color: #f7ede2 !important;
-}
-
-.text--success {
-  color: #84a59d !important;
-}
-
-.text--danger {
-  color: #f28482 !important;
-}
-
-.text--warning {
-  color: #f5cac3 !important;
 }
 
 .justify-content-start {
@@ -540,64 +500,104 @@ button {
   text-align: end !important;
 }
 
-.btn--primary {
+.bg-primary {
   background-color: #f6bd60 !important;
 }
 
-.btn--secondary {
+.bg-secondary {
   background-color: #f7ede2 !important;
 }
 
-.btn--success {
+.bg-success {
   background-color: #84a59d !important;
 }
 
-.btn--danger {
+.bg-danger {
   background-color: #f28482 !important;
 }
 
-.btn--warning {
+.bg-warning {
   background-color: #f5cac3 !important;
 }
 
+.text-primary {
+  color: #f6bd60 !important;
+}
+
+.text-secondary {
+  color: #f7ede2 !important;
+}
+
+.text-success {
+  color: #84a59d !important;
+}
+
+.text-danger {
+  color: #f28482 !important;
+}
+
+.text-warning {
+  color: #f5cac3 !important;
+}
+
 .btn--primary {
-  color: rgb(82.3392857143, 52.8214285714, 4.6607142857) !important;
+  background-color: #f6bd60;
 }
 
 .btn--secondary {
-  color: rgb(170.8648648649, 111.9459459459, 47.1351351351) !important;
+  background-color: #f7ede2;
 }
 
 .btn--success {
-  color: rgb(17.7464788732, 24.2535211268, 22.676056338) !important;
+  background-color: #84a59d;
 }
 
 .btn--danger {
-  color: rgb(105.9782608696, 12.7173913043, 11.0217391304) !important;
+  background-color: #f28482;
 }
 
 .btn--warning {
-  color: rgb(158.5714285714, 44.9285714286, 26.4285714286) !important;
+  background-color: #f5cac3;
 }
 
 .btn--primary {
-  border-color: rgb(82.3392857143, 52.8214285714, 4.6607142857) !important;
+  color: rgb(82.3392857143, 52.8214285714, 4.6607142857);
 }
 
 .btn--secondary {
-  border-color: rgb(170.8648648649, 111.9459459459, 47.1351351351) !important;
+  color: rgb(170.8648648649, 111.9459459459, 47.1351351351);
 }
 
 .btn--success {
-  border-color: rgb(17.7464788732, 24.2535211268, 22.676056338) !important;
+  color: rgb(17.7464788732, 24.2535211268, 22.676056338);
 }
 
 .btn--danger {
-  border-color: rgb(105.9782608696, 12.7173913043, 11.0217391304) !important;
+  color: rgb(105.9782608696, 12.7173913043, 11.0217391304);
 }
 
 .btn--warning {
-  border-color: rgb(158.5714285714, 44.9285714286, 26.4285714286) !important;
+  color: rgb(158.5714285714, 44.9285714286, 26.4285714286);
+}
+
+.btn--primary {
+  border-color: rgb(82.3392857143, 52.8214285714, 4.6607142857);
+}
+
+.btn--secondary {
+  border-color: rgb(170.8648648649, 111.9459459459, 47.1351351351);
+}
+
+.btn--success {
+  border-color: rgb(17.7464788732, 24.2535211268, 22.676056338);
+}
+
+.btn--danger {
+  border-color: rgb(105.9782608696, 12.7173913043, 11.0217391304);
+}
+
+.btn--warning {
+  border-color: rgb(158.5714285714, 44.9285714286, 26.4285714286);
 }
 
 .btn {
@@ -606,6 +606,26 @@ button {
   border-style: none;
   padding: 0.5em 1.2em;
   cursor: pointer;
+}
+
+.btn--primary:hover {
+  background: rgb(246.9, 195.6, 111.9);
+}
+
+.btn--secondary:hover {
+  background: rgb(247.8, 238.8, 228.9);
+}
+
+.btn--success:hover {
+  background: rgb(144.3, 174, 166.8);
+}
+
+.btn--danger:hover {
+  background: rgb(243.3, 144.3, 142.5);
+}
+
+.btn--warning:hover {
+  background: rgb(246, 207.3, 201);
 }
 
 .card {
@@ -632,13 +652,13 @@ button {
   margin-bottom: 0.5rem;
 }
 
-.card__header-image-avatar + .card__header-text {
-  margin-bottom: 0.5rem;
-}
-
 .card__header-text {
   display: flex;
   flex-direction: column;
+}
+
+.card__header-image-avatar + .card__header-text {
+  margin-bottom: 0.5rem;
 }
 
 .card__title {
